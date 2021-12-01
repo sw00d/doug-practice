@@ -39,6 +39,10 @@
             <v-card-actions>
               <nuxt-link to="/passwordReset">Forgot password?</nuxt-link>
               <v-spacer></v-spacer>
+              <v-btn type="submit" style="color: green;" v-on:click="guestHome"  
+                to="/guestHome">
+                <strong>guest</strong>
+              </v-btn>
               <v-btn type="submit">Login</v-btn>
             </v-card-actions>
           </v-form>
@@ -53,10 +57,13 @@ export default {
   auth: false,
   data() {
     return {
-      errors: {},
+      errors: {
+
+      },
       form: {
         email: '',
-        password: ''
+        password: '',
+        guest: ""
       },
       remember_me: true
     }
@@ -90,4 +97,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+ 
+
+</style>
 

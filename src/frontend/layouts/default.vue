@@ -23,7 +23,8 @@
 </script>
 
 <style lang="stylus" scoped>
-.content
-    width 100%
-    height 100%
+  .content
+      width 100%
+      height 100%
+
 </style>
