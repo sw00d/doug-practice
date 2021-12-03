@@ -3,10 +3,11 @@
     <v-layout align-center justify-center>
       <v-flex md4>
         <v-card>
-          <v-toolbar color="primary" dark flat>
-            <v-toolbar-title class="display-1">Login</v-toolbar-title>
+          <v-toolbar class="display-1-box" >
+            <v-toolbar-title class="display-1">Login Form</v-toolbar-title>
+          
+          <div class="dash"><strong> _</strong></div>
           </v-toolbar>
-
           <v-form @submit.prevent="login" novalidate>
             <v-card-text>
               <v-alert outlined type="error" v-if="errors.non_field_errors || errors.detail">
@@ -18,10 +19,10 @@
 
               <v-text-field
                 v-model="form.email"
-                label="Email"
-                name="email"
+                label="User Name"
+                name="user"
                 :error="!!errors.email"
-                :error-messages="errors.email"
+                :error-messages="errors.userName"
                 prepend-icon="person"
                 type="text"></v-text-field>
               <v-text-field
@@ -30,19 +31,34 @@
                 name="password"
                 :error="!!errors.password"
                 :error-messages="errors.password"
-                prepend-icon="lock"
+                prepend-icon="fingerprint"
                 ref="password"
                 onfocus="this.select()"
                 type="password"></v-text-field>
             </v-card-text>
 
             <v-card-actions>
-              <nuxt-link to="/passwordReset">Forgot password?</nuxt-link>
+              <v-btn type="submit" style="color: green;" v-on:click="guestHome"  
+                to="/guestHome">
+                <strong>guest</strong>
+              </v-btn>
+              <v-btn type="submit" id="login-button" color="rgb(247, 52, 52)" style="color: white;">Login
+              </v-btn>
               <v-spacer></v-spacer>
-              <v-btn type="submit">Login</v-btn>
-            </v-card-actions>
+              <v-switch
+                color="rgb(252,4,4)"
+                v-model="switch1"
+                inset
+                :label="`Remember Me`">
+              </v-switch>
+            </v-card-actions>   
           </v-form>
         </v-card>
+            <div id="spacer">
+                <NuxtLink to="/password-reset" style="color: white">
+                Forgot Password?
+                </NuxtLink>
+            </div>
       </v-flex>
     </v-layout>
   </v-container>
@@ -50,15 +66,21 @@
 
 <script>
 export default {
+  
   auth: false,
   data() {
     return {
-      errors: {},
+      errors: {
+        userName:"please enter a valid user name",
+        password:"please enter a valid password"
+      },
       form: {
         email: '',
-        password: ''
+        password: '',
+        guest: ""
       },
-      remember_me: true
+      remember_me: true,
+      switch1: true,
     }
   },
   methods: {
@@ -90,4 +112,21 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  #login-button {
+    color: white;
+  }
+
+  #spacer {
+    margin: 5% 0 0 0;
+  }
+.dash {
+  color: red;
+  font-size: 4em;
+  margin: 3% 0 0 -42%;
+}
+
+
+</style>
 
