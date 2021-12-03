@@ -39,6 +39,12 @@
               <v-btn depressed type="submit">
                 Send password reset email
               </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn type="submit">
+                  <NuxtLink to="/">
+                      Home
+                  </NuxtLink>
+              </v-btn>
             </v-card-actions>
           </v-form>
         </v-card>
