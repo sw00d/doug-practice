@@ -3,10 +3,9 @@
     <v-layout align-center justify-center>
       <v-flex md4>
         <v-card>
-          <v-toolbar class="display-1-box" >
-            <v-toolbar-title class="display-1">Login Form</v-toolbar-title>
-          
-          <div class="dash"><strong> _</strong></div>
+          <v-toolbar class="toolbar elevation-0">
+            <v-toolbar-title>Login Form</v-toolbar-title>
+            <div class="dash"></div>
           </v-toolbar>
           <v-form @submit.prevent="login" novalidate>
             <v-card-text>
@@ -38,25 +37,25 @@
             </v-card-text>
 
             <v-card-actions>
-              <v-btn type="submit" style="color: green;" v-on:click="guestHome"  
+              <v-btn type="submit" class="green--text" v-on:click="guestHome"  
                 to="/guestHome">
                 <strong>guest</strong>
               </v-btn>
-              <v-btn type="submit" id="login-button" color="rgb(247, 52, 52)" style="color: white;">Login
+              <v-btn type="submit" id="login-button" class="red lighten-1 white--text">Login
               </v-btn>
               <v-spacer></v-spacer>
               <v-switch
                 color="rgb(252,4,4)"
                 v-model="switch1"
                 inset
-                :label="`Remember Me`">
+                label="Remember Me">
               </v-switch>
             </v-card-actions>   
           </v-form>
         </v-card>
             <div id="spacer">
-                <NuxtLink to="/password-reset" style="color: white">
-                Forgot Password?
+                <NuxtLink to="/password-reset" class="white--text">
+                Forgot Password
                 </NuxtLink>
             </div>
       </v-flex>
@@ -70,10 +69,7 @@ export default {
   auth: false,
   data() {
     return {
-      errors: {
-        userName:"please enter a valid user name",
-        password:"please enter a valid password"
-      },
+      errors: {},
       form: {
         email: '',
         password: '',
@@ -114,17 +110,26 @@ export default {
 </script>
 
 <style scoped>
-  #login-button {
-    color: white;
-  }
+
+.toolbar {
+  border-bottom: gray;
+  border-style: solid;
+  border-width: thin;
+  
+}
+  .display-1{
+    font-size: 1rem;
+}
 
   #spacer {
     margin: 5% 0 0 0;
   }
+
 .dash {
-  color: red;
-  font-size: 4em;
-  margin: 3% 0 0 -42%;
+  background-color: rgb(247, 52, 52);
+  height: 14%;
+  width: 9%;
+  margin: 15% 0 0 -26%;
 }
 
 

@@ -88,10 +88,7 @@
     }
 </script>
 
-
-
-
-<style>
+<style >
 
     .mainContainer{
         background-color: white;
@@ -105,6 +102,13 @@
         align-items:center;
         height: 100px;
         margin: 0 0 1% 0;
+        border-radius: 3px;
+    }
+
+  @media only screen and (max-width: 170px) {
+    h1{
+            font-size: 14px;
+        }
     }
 
     h1{
@@ -120,4 +124,6 @@
         min-height: 100px;
     }
 
+
+  
 </style>
