@@ -5,10 +5,11 @@
                 </NuxtLink>
 
         <div class="banner">
-                <h1> Retirement Visions &amp Projections</h1>
+                <h1> Retirement Visions and Projections</h1>
         </div>
         <v-form id="formContainer">
             <v-container>
+                window.alert('This is sensitive information. Enter at your own risk.')
                 <h2 id="formHeader">
                     Fill in your current information
                 </h2>
@@ -54,8 +55,21 @@
                     sm="11"
                     md="2"
                     >
-                        <v-text-field filled>$
+                        <v-text-field filled label="Create Asset">
                         </v-text-field>
+                    </v-col>
+                    <v-col
+                    cols="22"
+                    sm="11"
+                    md="2"
+                    >
+                        <v-btn 
+                        type="submit" 
+                        onclick="securityAlert"
+                        id="submit-button" 
+                        class="secondary white--text"
+                        width="135"
+                        >submit</v-btn>
                     </v-col>
 
                 </v-row>
@@ -96,7 +110,7 @@
     .banner{
         display: flexbox;
         width: 100%;
-        background-color:rgba(155, 154, 156, 0.822);
+        background-color: var(--v-secondary-base);
         color: white;
         justify-items: center;
         align-items:center;
@@ -119,9 +133,11 @@
             }
 
     #formContainer{
-        margin: 0 0 0 2%;
+        margin: 0 0 0 0;
         border:black solid 2px;
         min-height: 100px;
+        background-color: var(--v-secondary-lighten3);
+
     }
 
 

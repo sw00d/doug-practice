@@ -7,7 +7,7 @@ export default {
     },
     themes: {
       light: {
-        primary: '#F3774F',
+        primary: '#ff5253',
         secondary: '#69A2B0',
         highlight: '#fad569',
         anchor: '#070707',

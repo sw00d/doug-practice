@@ -37,18 +37,34 @@
             </v-card-text>
 
             <v-card-actions>
-              <v-btn type="submit" class="green--text" v-on:click="guestHome"  
+              <v-btn 
+                type="submit" 
+                class="green--text" 
+                v-on:click="guestHome"  
                 to="/guestHome">
-                <strong>guest</strong>
+                <strong
+                >
+                  guest</strong>
               </v-btn>
-              <v-btn type="submit" id="login-button" class="red lighten-1 white--text">Login
+              <v-btn 
+                type="submit" 
+                id="login-button" 
+                v-on:click="asset-calculator"
+                to="/asset-calculator"
+                class="primary white--text"
+                depressed
+                width="135"
+              >
+                Login
               </v-btn>
               <v-spacer></v-spacer>
               <v-switch
-                color="rgb(252,4,4)"
+                color="primary"
                 v-model="switch1"
                 inset
-                label="Remember Me">
+                label="Remember Me"
+                 >
+               
               </v-switch>
             </v-card-actions>   
           </v-form>
@@ -126,10 +142,10 @@ export default {
   }
 
 .dash {
-  background-color: rgb(247, 52, 52);
+  background-color: var(--v-primary-base);
   height: 14%;
   width: 9%;
-  margin: 15% 0 0 -26%;
+  margin: 35px 0 0 -26%;
 }
 
 
