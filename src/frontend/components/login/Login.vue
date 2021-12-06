@@ -36,7 +36,7 @@
                 type="password"></v-text-field>
             </v-card-text>
 
-            <v-card-actions>
+            <v-card-actions class="login-buttons">
               <v-btn 
                 type="submit" 
                 class="green--text" 
@@ -144,10 +144,15 @@ export default {
 .dash {
   background-color: var(--v-primary-base);
   height: 14%;
-  width: 9%;
-  margin: 35px 0 0 -26%;
+  width: 50px;
+  margin: 60px 0 0 -101px;
 }
 
-
+@media only screen and (max-width: 415px) {
+  .login-buttons {
+    display: inline;
+    margin: 0 0 0 10px;
+  }
+}
 </style>
 
